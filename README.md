@@ -78,7 +78,26 @@ O projeto está estruturado da seguinte maneira:
 
 
 ## Solução
-O código de testes está pela metade, e você deverá dar continuidade implementando os testes descritos acima, para que no final, tenhamos um programa de testes funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+O código de testes estava pela metade, e dei continuidade implementando os testes descritos acima, para que no final, tivéssemos um programa de testes funcional.
 
-codigo corrigido, testes ok
 ![alt text](image.png)
+
+
+### Testes Unitários
+Os testes unitários são fundamentais para garantir que cada unidade de código funcione conforme o esperado. Eles permitem isolar partes do código, validar a lógica em diferentes cenários, e assegurar que futuras alterações não introduzam novos problemas. Utilizamos o xUnit para implementar nossos testes, que inclui métodos como `[Fact]` para cenários específicos e `[Theory]` junto com `[InlineData]` para múltiplos cenários com diferentes conjuntos de dados.
+
+Exemplo de um teste unitário:
+
+```csharp
+[Fact]
+public void DeveRetornar9ComoMaiorNumeroDaLista()
+{
+    // Arrange
+    var lista = new List<int> { 5, -1, -8, 9 };
+
+    // Act
+    int resultado = lista.Max();
+
+    // Assert
+    Assert.Equal(9, resultado);
+}
